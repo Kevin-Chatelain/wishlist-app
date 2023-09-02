@@ -1,0 +1,51 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.card {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 30px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.card-image {
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+}
+
+.card-image img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-infos > * {
+    margin: 0;
+}
+
+.card-name {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.card-price {
+    font-size: 35px;
+    font-weight: 700;
+}

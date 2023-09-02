@@ -1,3 +1,8 @@
+<?php
+include "includes/classes/dbh.php";
+include "includes/classes/products.php";
+echo "<pre>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,40 +23,58 @@
         body {
             margin: 0;
         }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Ajouter un produit à la wishlist</h1>
-    <form action="products.php" method="POST">
-        <label for="name">
-            <p>Nom : </p>
-            <input type="text" id="name" name="name">
-        </label>
-        <label for="picture">
-            <p>Photo : </p>    
-            <input type="text" id="picture" name="picture">
-        </label>
-        <label for="category">
-            <p>Catégorie : </p> 
-            <select id="category" name="category">
-                <option value="vetement">Vêtement</option>
-                <option value="high-tech">High-Tech</option>
-                <option value="divers">Divers</option>
-            </select>
-        </label>
-        <label for="price">
-            <p>Prix : </p> 
-            <input type="text" id="price" name="price">
-        </label>
-        <label for="link">
-            <p>Lien du produit : </p> 
-            <input type="text" id="link" name="link">
-        </label>
-        <input type="submit" id="submit" name="register-product" value="Enregistrer">
-    </form>
+    <main>
+        <div class="card-grid">
+            <?php
+            $products = new Products();
+            $products->displayProducts();
+            ?>
+        </div>
 
+        <h1>Ajouter un produit à la wishlist</h1>
+        <form action="includes/register.php" method="POST">
+            <label for="name">
+                <p>Nom : </p>
+                <input type="text" id="name" name="name">
+            </label>
+            <label for="picture">
+                <p>Photo : </p>
+                <input type="text" id="picture" name="picture">
+            </label>
+            <label for="category">
+                <p>Catégorie : </p>
+                <select id="category" name="category">
+                    <option value="vetement">Vêtement</option>
+                    <option value="high-tech">High-Tech</option>
+                    <option value="divers">Divers</option>
+                </select>
+            </label>
+            <label for="price">
+                <p>Prix : </p>
+                <input type="text" id="price" name="price">
+            </label>
+            <label for="link">
+                <p>Lien du produit : </p>
+                <input type="text" id="link" name="link">
+            </label>
+            <input type="submit" id="submit" name="register-product" value="Enregistrer">
+        </form>
+    </main>
 
     <script src="assets/js/main.js"></script>
 </body>
