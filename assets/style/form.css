@@ -1,0 +1,70 @@
+.register-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--white);
+    padding: 45px;
+    transform: translateY(0px) translate(-50%, -50%);
+    border-radius: 30px;
+    width: 40%;
+    z-index: 10;
+}
+
+.register-form h2 {
+    margin-top: 0;
+}
+
+.register-form p {
+    margin-bottom: 5px;
+}
+
+.register-form label input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.425);
+    padding: 5px;
+}
+
+.register-form select {
+    padding: 0px 10px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.425);
+    width: 100%;
+    height: 35px;
+}
+
+.register-form #submit {
+    background-color: var(--primary);
+    width: fit-content;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: none;
+    color: var(--white);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register-form #submit:hover {
+    background-color: var(--primaryHover);
+}
+
+.close-form {
+    position: absolute;
+    box-sizing: content-box;
+    top: -15px;
+    right: -15px;
+    stroke: rgb(219, 54, 54);
+    height: 30px;
+    width: 30px;
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}

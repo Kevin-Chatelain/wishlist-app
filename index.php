@@ -1,9 +1,9 @@
 <?php
-include "includes/classes/dbh.php";
-include "includes/classes/products.php";
-// echo "<pre>";
-$products = new Products();
+    include "includes/classes/dbh.php";
+    include "includes/classes/products.php";
+    $products = new Products();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +14,10 @@ $products = new Products();
     <!-- Link -->
     <link rel="preload" href="assets/style/style.css" as="style">
     <link rel="preload" href="assets/style/card.css" as="style">
+    <link rel="preload" href="assets/style/form.css" as="style">
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/card.css">
+    <link rel="stylesheet" href="assets/style/form.css">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +26,12 @@ $products = new Products();
 </head>
 
 <body>
+    <div class="register-form hidden">
+        <?php include "includes/register.php"; ?>
+    </div>
+    <div class="body-shadow hidden"></div>
     <main>
-        <h1>Liste des produits</h1>
+        <h1>Wishlist - Liste des produits</h1>
         <div class="options">
             <div class="filters">
                 <?php $products->displayFilters(); ?>

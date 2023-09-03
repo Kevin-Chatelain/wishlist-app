@@ -7,15 +7,28 @@
 
 :root {
     --primary: #7aa1d2;
+    --primaryHover: #2066bb;
     --secondary: #cc95c0;
     --tertiary: #d1d1d1;
     --black: #141414;
     --grey: rgb(43, 43, 43);
+    --white: #f7f7f7;
 }
 
 body {
     margin: 0;
     background: linear-gradient(35deg, #cc95c0, #dbd4b4, #7aa1d2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.body-shadow {
+    position: fixed;
+    inset: 0;
+    background-color: #1414148f;
+    z-index: 5;
 }
 
 main {
@@ -59,7 +72,7 @@ a {
 }
 
 .new-product:hover {
-    border-color: rgba(43, 43, 43, 0.7);
+    border-color: rgba(43, 43, 43, 0.5);
 }
 
 .new-product span {
@@ -89,5 +102,5 @@ a {
 
 .filters > button.selected {
     background-color: var(--secondary);
-    color: white;
+    color: var(--white);
 }

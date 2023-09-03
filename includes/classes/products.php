@@ -5,7 +5,6 @@
             if(!$stmt->execute(array($name, $picture, $category, $price, $link))) {
                 print_r($stmt->errorInfo());
                 $stmt = null;
-                exit();
             }
         }
 
@@ -14,7 +13,6 @@
             if(!$stmt->execute(array(1))) {
                 print_r($stmt->errorInfo());
                 $stmt = null;
-                exit();
             }
             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             for($i = 0; $i < count($products); $i++) {
@@ -27,7 +25,6 @@
             if(!$stmt->execute(array(1))) {
                 print_r($stmt->errorInfo());
                 $stmt = null;
-                exit();
             }
             $filters = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach($filters as $filter) {
