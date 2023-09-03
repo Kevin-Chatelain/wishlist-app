@@ -31,7 +31,7 @@
             }
             $filters = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach($filters as $filter) {
-                echo "<button data-filter='".$filter["category"]."'>".$filter["category"]."</button>";
+                echo "<button class='selected' data-filter='".$filter["category"]."'>".$filter["category"]."</button>";
             }
         }
     }

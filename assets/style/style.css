@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: 'Fira Sans', sans-serif;
     color: var(--black);
+    transition: 0.2s;
 }
 
 :root {
@@ -53,6 +54,12 @@ a {
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    border-bottom: 1px solid transparent;
+    padding: 0;
+}
+
+.new-product:hover {
+    border-color: rgba(43, 43, 43, 0.7);
 }
 
 .new-product span {
@@ -72,94 +79,15 @@ a {
 .filters > button {
     padding: 10px 20px;
     border: none;
-    color: white;
+    background-color: var(--tertiary);
     font-size: 17px;
     font-weight: 400;
     border-radius: 50px;
+    color: rgb(43, 43, 43);
+    cursor: pointer;
+}
+
+.filters > button.selected {
     background-color: var(--secondary);
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #F2F2F2;
-    gap: 25px;
-    border-radius: 20px;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;}
-
-.card-image {
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    border-radius: 8px;
-}
-
-.card-image img {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.card-infos {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.card-infos > * {
-    margin: 0;
-}
-
-.card-name {
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.card-price {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0;
-}
-
-.card-low-row {
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-    align-items: center;
-}
-
-.card-category {
-    margin: 0;
-}
-
-.card-category {
-    background-color: var(--tertiary);
-    padding: 5px 15px;
-    border-radius: 50px;
-    color: rgb(43, 43, 43); 
-}
-
-.card-link {
-    background-color: var(--primary);
-    width: 100%;
-    padding: 12px 30px;
-    border-radius: 8px;
     color: white;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
 }
