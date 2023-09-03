@@ -1,7 +1,7 @@
 <?php
 include "includes/classes/dbh.php";
 include "includes/classes/products.php";
-echo "<pre>";
+// echo "<pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,12 +12,22 @@ echo "<pre>";
     <meta name="description" content="Un super site">
     <link rel="preload" href="assets/style/style.css" as="style">
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Template</title>
 
     <style>
         * {
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Fira Sans', sans-serif;
+            color: var(--black);
+        }
+
+        :root {
+            --primary: #16C172;
+            --tertiary: #d1d1d1;
+            --black: #141414;
         }
 
         body {
@@ -26,7 +36,7 @@ echo "<pre>";
 
         main {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 50px auto;
         }
 
         a {
@@ -37,43 +47,13 @@ echo "<pre>";
 </head>
 
 <body>
-
     <main>
         <div class="card-grid">
             <?php
-            $products = new Products();
-            $products->displayProducts();
+                $products = new Products();
+                $products->displayProducts();
             ?>
         </div>
-
-        <h1>Ajouter un produit à la wishlist</h1>
-        <form action="includes/register.php" method="POST">
-            <label for="name">
-                <p>Nom : </p>
-                <input type="text" id="name" name="name">
-            </label>
-            <label for="picture">
-                <p>Photo : </p>
-                <input type="text" id="picture" name="picture">
-            </label>
-            <label for="category">
-                <p>Catégorie : </p>
-                <select id="category" name="category">
-                    <option value="vetement">Vêtement</option>
-                    <option value="high-tech">High-Tech</option>
-                    <option value="divers">Divers</option>
-                </select>
-            </label>
-            <label for="price">
-                <p>Prix : </p>
-                <input type="text" id="price" name="price">
-            </label>
-            <label for="link">
-                <p>Lien du produit : </p>
-                <input type="text" id="link" name="link">
-            </label>
-            <input type="submit" id="submit" name="register-product" value="Enregistrer">
-        </form>
     </main>
 
     <script src="assets/js/main.js"></script>
