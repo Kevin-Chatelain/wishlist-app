@@ -1,3 +1,84 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--black);
+}
+
+:root {
+    --primary: #7aa1d2;
+    --secondary: #cc95c0;
+    --tertiary: #d1d1d1;
+    --black: #141414;
+    --grey: rgb(43, 43, 43);
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(35deg, #cc95c0, #dbd4b4, #7aa1d2);
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 50px;
+    min-height: 100vh;
+    background-color: #ffffff80;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+.options {
+    display: flex; 
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 25px 0;
+    border-top: 1px solid rgba(43, 43, 43, 0.1);
+    border-bottom: 1px solid rgba(43, 43, 43, 0.1);
+}
+
+.new-product {
+    font-size: 17px;
+    background-color: transparent;
+    border: none;
+    color: var(--grey);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.new-product span {
+    height: fit-content;
+}
+
+.new-product span svg {
+    transform: translateY(2px);
+}
+
+.filters {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+}
+
+.filters > button {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 50px;
+    background-color: var(--secondary);
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -6,10 +87,10 @@
 
 .card {
     display: flex;
-    justify-content: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
+    background-color: #F2F2F2;
     gap: 25px;
     border-radius: 20px;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;}

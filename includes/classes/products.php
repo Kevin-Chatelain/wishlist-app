@@ -16,12 +16,23 @@
                 $stmt = null;
                 exit();
             }
-            else {
-                $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                for($i = 0; $i < count($products); $i++) {
-                    include "includes/card.php";
-                }
-             }
+            $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            for($i = 0; $i < count($products); $i++) {
+                include "includes/card.php";
+            }    
+        }
+
+        public function displayFilters() {
+            $stmt = $this->connect()->prepare("SELECT DISTINCT category FROM products WHERE ?");
+            if(!$stmt->execute(array(1))) {
+                print_r($stmt->errorInfo());
+                $stmt = null;
+                exit();
+            }
+            $filters = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach($filters as $filter) {
+                echo "<button data-filter='".$filter["category"]."'>".$filter["category"]."</button>";
+            }
         }
     }
 

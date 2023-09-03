@@ -2,6 +2,7 @@
 include "includes/classes/dbh.php";
 include "includes/classes/products.php";
 // echo "<pre>";
+$products = new Products();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,43 +17,19 @@ include "includes/classes/products.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Template</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Fira Sans', sans-serif;
-            color: var(--black);
-        }
-
-        :root {
-            --primary: #16C172;
-            --tertiary: #d1d1d1;
-            --black: #141414;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        main {
-            max-width: 1400px;
-            margin: 50px auto;
-        }
-
-        a {
-            display: block;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
     <main>
+        <h1>Liste des produits</h1>
+        <div class="options">
+            <div class="filters">
+                <?php $products->displayFilters(); ?>
+            </div>
+            <button class="new-product">Ajouter un produit <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(43, 43, 43)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span></button>
+        </div>
         <div class="card-grid">
-            <?php
-                $products = new Products();
-                $products->displayProducts();
-            ?>
+            <?php $products->displayProducts(); ?>
         </div>
     </main>
 
