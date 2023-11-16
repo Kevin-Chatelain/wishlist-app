@@ -19,12 +19,21 @@ window.addEventListener("load", () => {
     });
 
     /** FORM **/
-    document.querySelector(".new-product").addEventListener("click", () => {
-        document.querySelector(".register-form").classList.remove("hidden");
-        document.querySelector(".body-shadow").classList.remove("hidden");
+    if(document.querySelector(".new-product")) {
+        document.querySelector(".new-product").addEventListener("click", () => {
+            document.querySelector(".register-form").classList.remove("hidden");
+            document.querySelector(".body-shadow").classList.remove("hidden");
+        });
+        document.querySelector(".close-form").addEventListener("click", () => {
+            document.querySelector(".register-form").classList.add("hidden");
+            document.querySelector(".body-shadow").classList.add("hidden");
+        });
+    }
+    
+    /** TOTAL **/
+    let total = 0;
+    document.querySelectorAll(".card-price").forEach(price => {
+        total += parseFloat(price.innerText);
     });
-    document.querySelector(".close-form").addEventListener("click", () => {
-        document.querySelector(".register-form").classList.add("hidden");
-        document.querySelector(".body-shadow").classList.add("hidden");
-    });
+    document.querySelector(".total span").innerText = total.toFixed(2);
 });

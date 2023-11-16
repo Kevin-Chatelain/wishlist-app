@@ -14,6 +14,7 @@
         <select id="category" name="category">
             <option value="Vêtement">Vêtement</option>
             <option value="High-Tech">High-Tech</option>
+            <option value="Livre">Livre</option>
             <option value="Divers">Divers</option>
         </select>
     </label>

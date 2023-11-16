@@ -9,10 +9,16 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
+    position: relative;
     background-color: var(--white);
     gap: 25px;
     border-radius: 20px;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;}
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.card:hover .card-options {
+    opacity: 1;
+}
 
 .card-image {
     height: 300px;
@@ -24,6 +30,41 @@
 
 .card-image img {
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-options {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 5;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.card-options ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.card-options ul li {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #D1D1D1;
+    cursor: pointer;
+}
+
+.card-options ul li:hover {
+    background-color: var(--secondary);
+}
+
+.card-options ul li svg {
     position: absolute;
     top: 50%;
     left: 50%;
